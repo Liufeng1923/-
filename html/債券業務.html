@@ -42,17 +42,14 @@
               getMarkmap().refreshHook.call();
             }
           };
-        })(() => window.markmap)</script><script src="https://cdn.jsdelivr.net/npm/webfontloader@1.6.28/webfontloader.js" defer></script><script src="https://cdn.jsdelivr.net/npm/markmap-toolbar@0.16.0/dist/index.js"></script><script>(r => {
-                setTimeout(r);
-              })(() => {
-  const {
-    markmap,
-    mm
-  } = window;
-  const {
-    el
-  } = markmap.Toolbar.create(mm);
-  el.setAttribute('style', 'position:absolute;bottom:20px;right:20px');
+        })(() => window.markmap)</script><script src="https://cdn.jsdelivr.net/npm/webfontloader@1.6.28/webfontloader.js" defer></script><script src="https://cdn.jsdelivr.net/npm/markmap-toolbar@0.16.0/dist/index.js"></script><script>((r) => {
+            setTimeout(r);
+          })(() => {
+  const { markmap, mm } = window;
+  const toolbar = new markmap.Toolbar();
+  toolbar.attach(mm);
+  const el = toolbar.render();
+  el.setAttribute("style", "position:absolute;bottom:20px;right:20px");
   document.body.append(el);
 })</script><script>((getMarkmap, getOptions, root2, jsonOptions) => {
               const markmap = getMarkmap();

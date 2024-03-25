@@ -4,10 +4,13 @@ from tqdm import tqdm
 
 def get_all_files():
     all_files = os.listdir("MarkdownFiles")
-    for file in tqdm(all_files, desc="Converting Markdown Files"):
-        if file.endswith(".markdown"):
+    for file in all_files:
+        if file.endswith(".md"):
+            print(file)
             os.system(
-                "markmap --no-open --output {}.html {}".format(file.split(".")[0], file)
+                "markmap --no-open --output ./html/{}.html ./MarkdownFiles/{}".format(
+                    file.split(".")[0], file
+                )
             )
             print("{} coverted!".format(file))
 
