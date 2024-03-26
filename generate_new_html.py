@@ -6,7 +6,7 @@ def get_all_files():
     all_files = os.listdir("MarkdownFiles")
     for file in all_files:
         if file.endswith(".md"):
-            if file.startswith("index"):
+            if file == "index.md":
                 os.system(
                     "markmap --no-open --output index.html ./MarkdownFiles/{}".format(
                         file
